@@ -1,0 +1,1219 @@
+c[?7l[2J[0mSeaBIOS (version 1.17.0-debian-1.17.0-1)
+
+
+iPXE (https://ipxe.org) 00:02.0 CA00 PCI2.10 PnP PMM+3EFC7960+3EB87960 CA00
+Press Ctrl-B to configure iPXE (PCI 00:02.0)...                                                                               
+
+
+Booting from ROM...
+Probing EDD (edd=off to disable)... oc[?7l[2J[    0.000000] Linux version 7.1.0-rc2+ (<redacted-builder>) (gcc (Debian 15.2.0-17) 15.2.0, GNU ld (GNU Binutils for Debian) 2.46) #6 SMP PREEMPT_DYNAMIC Mon May 11 22:46:50 UTC 2026
+[    0.000000] Command line: console=ttyS0 panic=1 oops=panic kasan_multi_shot loglevel=8
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff]  System RAM
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff]  device reserved
+[    0.000000] BIOS-e820: [gap 0x00000000000a0000-0x00000000000effff]
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff]  device reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffdefff]  System RAM
+[    0.000000] BIOS-e820: [mem 0x000000003ffdf000-0x000000003fffffff]  device reserved
+[    0.000000] BIOS-e820: [gap 0x0000000040000000-0x00000000afffffff]
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff]  device reserved
+[    0.000000] BIOS-e820: [gap 0x00000000c0000000-0x00000000fed1bfff]
+[    0.000000] BIOS-e820: [mem 0x00000000fed1c000-0x00000000fed1ffff]  device reserved
+[    0.000000] BIOS-e820: [gap 0x00000000fed20000-0x00000000fffbffff]
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff]  device reserved
+[    0.000000] BIOS-e820: [gap 0x0000000100000000-0x000000fcffffffff]
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff]  device reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] DMI: SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.17.0-debian-1.17.0-1 04/01/2014
+[    0.000000] DMI: Memory slots populated: 1/1
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 3250.025 MHz processor
+[    0.035469] e820: update [mem 0x00000000-0x00000fff] System RAM ==> device reserved
+[    0.035904] e820: remove [mem 0x000a0000-0x000fffff] System RAM
+[    0.036362] last_pfn = 0x3ffdf max_arch_pfn = 0x10000000000
+[    0.037523] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.037871] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.041453] Using GB pages for direct mapping
+[    0.056160] RAMDISK: [mem 0x3fdbf000-0x3ffcffff]
+[    0.056979] ACPI: Early table checksum verification disabled
+[    0.057691] ACPI: RSDP 0x00000000000F52A0 000014 (v00 BOCHS )
+[    0.058279] ACPI: RSDT 0x000000003FFE23AC 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.059415] ACPI: FACP 0x000000003FFE219C 0000F4 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.060608] ACPI: DSDT 0x000000003FFE0040 00215C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.060853] ACPI: FACS 0x000000003FFE0000 000040
+[    0.061006] ACPI: APIC 0x000000003FFE2290 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.061183] ACPI: HPET 0x000000003FFE2310 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.061361] ACPI: MCFG 0x000000003FFE2348 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.061501] ACPI: WAET 0x000000003FFE2384 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.061736] ACPI: Reserving FACP table memory at [mem 0x3ffe219c-0x3ffe228f]
+[    0.061826] ACPI: Reserving DSDT table memory at [mem 0x3ffe0040-0x3ffe219b]
+[    0.061879] ACPI: Reserving FACS table memory at [mem 0x3ffe0000-0x3ffe003f]
+[    0.061928] ACPI: Reserving APIC table memory at [mem 0x3ffe2290-0x3ffe230f]
+[    0.061977] ACPI: Reserving HPET table memory at [mem 0x3ffe2310-0x3ffe2347]
+[    0.062043] ACPI: Reserving MCFG table memory at [mem 0x3ffe2348-0x3ffe2383]
+[    0.062092] ACPI: Reserving WAET table memory at [mem 0x3ffe2384-0x3ffe23ab]
+[    0.070170] No NUMA configuration found
+[    0.070247] Faking a node at [mem 0x0000000000000000-0x000000003ffdefff]
+[    0.072454] NODE_DATA(0) allocated [mem 0x3fd94340-0x3fdbefff]
+[    0.244437] KernelAddressSanitizer initialized (generic)
+[    0.245299] ACPI: PM-Timer IO Port: 0x608
+[    0.246297] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.247252] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+[    0.247650] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.248193] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.248278] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.248517] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.248589] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.249078] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.249205] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.249876] CPU topo: Max. logical packages:   1
+[    0.250031] CPU topo: Max. logical nodes:      1
+[    0.250074] CPU topo: Num. nodes per package:  1
+[    0.250222] CPU topo: Max. logical dies:       1
+[    0.250264] CPU topo: Max. dies per package:   1
+[    0.250408] CPU topo: Max. threads per core:   1
+[    0.250670] CPU topo: Num. cores per package:     2
+[    0.250724] CPU topo: Num. threads per package:   2
+[    0.250757] CPU topo: Allowing 2 present CPUs plus 0 hotplug CPUs
+[    0.252557] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.252695] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.252938] [gap 0x40000000-0xafffffff] available for PCI devices
+[    0.253058] Booting paravirtualized kernel on bare hardware
+[    0.253615] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.606422] Zone ranges:
+[    0.606523]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.606771]   DMA32    [mem 0x0000000001000000-0x000000003ffdefff]
+[    0.606840]   Normal   empty
+[    0.606891]   Device   empty
+[    0.606943] Movable zone start for each node
+[    0.607061] Early memory node ranges
+[    0.607111]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.607353]   node   0: [mem 0x0000000000100000-0x000000003ffdefff]
+[    0.607690] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdefff]
+[    0.610391] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.616191] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.709638] On node 0, zone DMA32: 33 pages in unavailable ranges
+[    0.710963] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.714317] percpu: Embedded 68 pages/cpu s247176 r0 d31352 u1048576
+[    0.715150] pcpu-alloc: s247176 r0 d31352 u1048576 alloc=1*2097152
+[    0.715378] pcpu-alloc: [0] 0 1 
+[    0.718142] Kernel command line: console=ttyS0 panic=1 oops=panic kasan_multi_shot loglevel=8
+[    0.726032] random: crng init done
+[    0.726260] printk: log buffer data + meta data: 131072 + 557056 = 688128 bytes
+[    0.727448] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.727802] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.734759] Fallback order for Node 0: 0 
+[    0.735305] Built 1 zonelists, mobility grouping on.  Total pages: 262013
+[    0.735391] Policy zone: DMA32
+[    0.736381] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.736506] stackdepot: allocating hash table via alloc_large_system_hash
+[    0.736678] stackdepot hash table entries: 1048576 (order: 12, 16777216 bytes, linear)
+[    0.751406] stackdepot: allocating space for 8192 stack pools via memblock
+[    1.023557] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    1.319933] ftrace: allocating 98150 entries in 384 pages
+[    1.320294] ftrace: allocated 384 pages with 2 groups
+[    1.361329] Dynamic Preempt: lazy
+[    1.381726] rcu: Preemptible hierarchical RCU implementation.
+[    1.381853] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    1.382113] 	Trampoline variant of Tasks RCU enabled.
+[    1.382148] 	Rude variant of Tasks RCU enabled.
+[    1.382177] 	Tracing variant of Tasks RCU enabled.
+[    1.382353] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    1.382428] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    1.387230] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    1.387406] RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    3.027229] NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    3.051439] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    3.070524] Console: colour VGA+ 80x25
+[    3.074378] printk: legacy console [ttyS0] enabled
+[    3.111397] ACPI: Core revision 20251212
+[    3.131429] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    3.140425] APIC: Switch to symmetric I/O mode setup
+[    3.141613] x2apic: IRQ remapping doesn't support X2APIC mode
+[    3.156481] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    3.178679] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x2ed8e2d2052, max_idle_ns: 440795359438 ns
+[    3.180320] Calibrating delay loop (skipped), value calculated using timer frequency.. 6500.05 BogoMIPS (lpj=13000100)
+[    3.187435] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    3.210775] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    3.211401] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    3.215379] mitigations: Enabled attack vectors: user_kernel, user_user, guest_host, guest_guest, SMT mitigations: auto
+[    3.217675] Speculative Store Bypass: Vulnerable
+[    3.218524] Spectre V2 : Mitigation: Retpolines
+[    3.219157] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    3.220089] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    3.229584] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    3.238534] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    3.238874] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    3.239155] x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+[    3.239533] x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+[    3.239704] x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
+[    3.239704] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    3.240041] x86/fpu: xstate_offset[3]:  960, xstate_sizes[3]:   64
+[    3.240348] x86/fpu: xstate_offset[4]: 1024, xstate_sizes[4]:   64
+[    3.240633] x86/fpu: xstate_offset[9]: 2688, xstate_sizes[9]:    8
+[    3.240952] x86/fpu: Enabled xstate features 0x21f, context size is 2696 bytes, using 'standard' format.
+[    4.542437] pid_max: default: 32768 minimum: 301
+[    4.569476] landlock: Up and running.
+[    4.569801] Yama: becoming mindful.
+[    4.581161] AppArmor: AppArmor initialized
+[    4.581931] TOMOYO Linux initialized
+[    4.587212] LSM support for eBPF active
+[    4.600322] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    4.600974] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    4.631161] VFS: Finished mounting rootfs on nullfs
+[    4.807704] smpboot: CPU0: AMD QEMU TCG CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+[    4.847498] Performance Events: PMU not available due to virtualization, using software events only.
+[    4.851704] signal: max sigframe size: 3632
+[    4.857028] rcu: Hierarchical SRCU implementation.
+[    4.857297] rcu: 	Max phase no-delay instances is 1000.
+[    4.863607] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    4.934467] NMI watchdog: Perf NMI watchdog permanently disabled
+[    4.943704] smp: Bringing up secondary CPUs ...
+[    4.966284] smpboot: x86: Booting SMP configuration:
+[    4.966598] .... node  #0, CPUs:      #1
+[    0.090037] calibrate_delay_direct() dropping min bogoMips estimate 3 = 7360778
+[    5.096214] smp: Brought up 1 node, 2 CPUs
+[    5.096721] smpboot: Total of 2 processors activated (12971.58 BogoMIPS)
+[    5.268818] node 0 deferred pages initialised in 116ms
+[    5.279980] Memory: 715664K/1048052K available (55334K kernel code, 24716K rwdata, 23144K rodata, 12132K init, 4136K bss, 324932K reserved, 0K cma-reserved)
+[    5.321356] devtmpfs: initialized
+[    5.338939] x86/mm: Memory block size: 128MB
+[    5.470323] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    5.473005] posixtimers hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    5.474096] futex hash table entries: 512 (32768 bytes on 1 NUMA nodes, total 32 KiB, linear).
+[    5.485878] xor: automatically using best checksumming function   avx       
+[    5.551462] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    5.582265] audit: initializing netlink subsys (disabled)
+[    5.588339] audit: type=2000 audit(1778539666.448:1): state=initialized audit_enabled=0 res=1
+[    5.614020] thermal_sys: Registered thermal governor 'fair_share'
+[    5.614153] thermal_sys: Registered thermal governor 'bang_bang'
+[    5.614480] thermal_sys: Registered thermal governor 'step_wise'
+[    5.614694] thermal_sys: Registered thermal governor 'user_space'
+[    5.615050] thermal_sys: Registered thermal governor 'power_allocator'
+[    5.616798] cpuidle: using governor ladder
+[    5.619844] cpuidle: using governor menu
+[    5.628490] Freeing SMP alternatives memory: 92K
+[    5.629846] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    5.647516] PCI: ECAM [mem 0xb0000000-0xbfffffff] (base 0xb0000000) for domain 0000 [bus 00-ff]
+[    5.649052] PCI: ECAM [mem 0xb0000000-0xbfffffff] reserved as E820 entry
+[    5.656977] PCI: Using configuration type 1 for base access
+[    5.662470] mtrr: your CPUs had inconsistent fixed MTRR settings
+[    5.663078] mtrr: your CPUs had inconsistent variable MTRR settings
+[    5.663424] mtrr: your CPUs had inconsistent MTRRdefType settings
+[    5.663789] mtrr: probably your BIOS does not setup all CPUs.
+[    5.664104] mtrr: corrected configuration.
+[    5.674480] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    5.788317] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    5.788953] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    5.789297] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    5.789579] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    6.095954] raid6: avx2x4   gen()  1182 MB/s
+[    6.162927] raid6: avx2x2   gen()   942 MB/s
+[    6.226802] raid6: avx2x1   gen()   543 MB/s
+[    6.231894] raid6: using algorithm avx2x4 gen() 1182 MB/s
+[    6.298932] raid6: .... xor() 694 MB/s, rmw enabled
+[    6.299536] raid6: using avx2x2 recovery algorithm
+[    6.335955] ACPI: Added _OSI(Module Device)
+[    6.336291] ACPI: Added _OSI(Processor Device)
+[    6.336486] ACPI: Added _OSI(Processor Aggregator Device)
+[    8.084614] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    8.240472] ACPI: \_SB_: platform _OSC: OS support mask [00027eff]
+[    8.316258] ACPI: Interpreter enabled
+[    8.322146] ACPI: PM: (supports S0 S3 S4 S5)
+[    8.323897] ACPI: Using IOAPIC for interrupt routing
+[    8.339096] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    8.339542] PCI: Using E820 reservations for host bridge windows
+[    8.381193] ACPI: Enabled 2 GPEs in block 00 to 3F
+[    9.848670] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    9.853181] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI HPX-Type3]
+[    9.913717] acpi PNP0A08:00: _OSC: platform does not support [PCIeHotplug LTR]
+[    9.996052] acpi PNP0A08:00: _OSC: OS now controls [PME AER PCIeCapability]
+[   10.069415] PCI host bridge to bus 0000:00
+[   10.072498] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[   10.073172] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[   10.073545] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[   10.073931] pci_bus 0000:00: root bus resource [mem 0x40000000-0xafffffff window]
+[   10.074299] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[   10.074728] pci_bus 0000:00: root bus resource [mem 0x100000000-0x8ffffffff window]
+[   10.075445] pci_bus 0000:00: root bus resource [bus 00-ff]
+[   10.077573] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000 conventional PCI endpoint
+[   10.119143] pci 0000:00:01.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[   10.121405] pci 0000:00:01.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[   10.121887] pci 0000:00:01.0: BAR 2 [mem 0xfebd0000-0xfebd0fff]
+[   10.122168] pci 0000:00:01.0: ROM [mem 0xfebc0000-0xfebcffff pref]
+[   10.124129] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[   10.161848] pci 0000:00:02.0: [1af4:1000] type 00 class 0x020000 conventional PCI endpoint
+[   10.164012] pci 0000:00:02.0: BAR 0 [io  0xc040-0xc05f]
+[   10.168135] pci 0000:00:02.0: BAR 1 [mem 0xfebd1000-0xfebd1fff]
+[   10.168620] pci 0000:00:02.0: BAR 4 [mem 0xfe000000-0xfe003fff 64bit pref]
+[   10.169077] pci 0000:00:02.0: ROM [mem 0xfeb80000-0xfebbffff pref]
+[   10.225078] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100 conventional PCI endpoint
+[   10.227283] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[   10.252696] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601 conventional PCI endpoint
+[   10.254363] pci 0000:00:1f.2: BAR 4 [io  0xc060-0xc07f]
+[   10.254730] pci 0000:00:1f.2: BAR 5 [mem 0xfebd2000-0xfebd2fff]
+[   10.288764] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500 conventional PCI endpoint
+[   10.289983] pci 0000:00:1f.3: BAR 4 [io  0x0700-0x073f]
+[   10.471589] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[   10.525853] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[   10.577789] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[   10.640245] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[   10.703646] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
+[   10.746302] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
+[   10.784155] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
+[   10.843805] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
+[   10.853960] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
+[   10.858982] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
+[   10.863530] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
+[   10.872408] ACPI: PCI: Interrupt link GSID configured for IRQ 19
+[   10.880026] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
+[   10.884893] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
+[   10.889509] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
+[   10.894674] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
+[   11.036478] iommu: Default domain type: Translated
+[   11.036841] iommu: DMA domain TLB invalidation policy: lazy mode
+[   11.084942] SCSI subsystem initialized
+[   11.089998] libata version 3.00 loaded.
+[   11.096842] pps_core: LinuxPPS API ver. 1 registered
+[   11.097253] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[   11.098560] PTP clock support registered
+[   11.206861] NetLabel: Initializing
+[   11.207253] NetLabel:  domain hash size = 128
+[   11.207447] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[   11.211627] NetLabel:  unlabeled traffic allowed by default
+[   11.212484] PCI: Using ACPI for IRQ routing
+[   11.217368] PCI: pci_cache_line_size set to 64 bytes
+[   11.218317] e820: register RAM buffer resource [mem 0x0009fc00-0x0009ffff]
+[   11.219019] e820: register RAM buffer resource [mem 0x3ffdf000-0x3fffffff]
+[   11.235704] pci 0000:00:01.0: vgaarb: setting as boot VGA device
+[   11.235704] pci 0000:00:01.0: vgaarb: bridge control possible
+[   11.235704] pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[   11.235863] vgaarb: loaded
+[   11.253914] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[   11.254650] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[   11.262270] clocksource: Switched to clocksource tsc-early
+[   11.305969] VFS: Disk quotas dquot_6.6.0
+[   11.307268] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[   11.354504] netfs: FS-Cache loaded
+[   11.363984] CacheFiles: Loaded
+[   11.395119] AppArmor: AppArmor Filesystem Enabled
+[   11.404465] acpi PNP0C01:00: Reserved [mem 0xb0000000-0xbfffffff]
+[   11.408024] pnp: PnP ACPI init
+[   11.542373] pnp: PnP ACPI: found 4 devices
+[   11.930124] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[   11.941140] NET: Registered PF_INET protocol family
+[   11.946391] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[   11.980582] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[   11.982005] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[   11.983579] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[   11.985737] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[   11.988028] TCP: Hash tables configured (established 8192 bind 8192)
+[   11.999006] MPTCP token hash table entries: 1024 (order: 3, 24576 bytes, linear)
+[   12.001359] UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+[   12.011429] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[   12.035947] RPC: Registered named UNIX socket transport module.
+[   12.036461] RPC: Registered udp transport module.
+[   12.036716] RPC: Registered tcp transport module.
+[   12.036963] RPC: Registered tcp-with-tls transport module.
+[   12.037742] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[   12.038464] NET: Registered PF_XDP protocol family
+[   12.041077] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[   12.041417] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[   12.041661] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[   12.041930] pci_bus 0000:00: resource 7 [mem 0x40000000-0xafffffff window]
+[   12.042408] pci_bus 0000:00: resource 8 [mem 0xc0000000-0xfebfffff window]
+[   12.042728] pci_bus 0000:00: resource 9 [mem 0x100000000-0x8ffffffff window]
+[   12.048681] PCI: CLS 0 bytes, default 64
+[   12.071949] kvm_intel: VMX not supported by CPU 0
+[   12.077677] Trying to unpack rootfs image as initramfs...
+[   12.080965] kvm_amd: Nested Virtualization enabled
+[   12.082050] kvm_amd: Nested Paging enabled
+[   12.083045] kvm_amd: Virtual GIF supported
+[   12.083294] kvm_amd: PMU virtualization is disabled
+[   12.817061] mce: Machine check injector initialized
+[   13.108406] Initialise system trusted keyrings
+[   13.113597] Key type blacklist registered
+[   13.140430] workingset: timestamp_bits=36 (anon: 32) max_order=18 bucket_order=0 (anon: 0)
+[   13.195201] clocksource: Watchdog remote CPU 1 read timed out
+[   13.252141] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[   13.280492] NFS: Registering the id_resolver key type
+[   13.281681] Key type id_resolver registered
+[   13.281920] Key type id_legacy registered
+[   13.283749] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[   13.284862] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[   13.429831] Key type cifs.spnego registered
+[   13.438921] Key type cifs.idmap registered
+[   13.456138] romfs: ROMFS MTD (C) 2007 Red Hat, Inc.
+[   13.461314] fuse: init (API version 7.45)
+[   13.501388] orangefs_debugfs_init: called with debug mask: :none: :0:
+[   13.515565] orangefs_init: module version upstream loaded
+[   13.518664] SGI XFS with ACLs, security attributes, realtime, scrub, repair, quota, no debug enabled
+[   13.599995] 9p: Installing v9fs 9p2000 file system support
+[   13.629029] ceph: loaded (mds proto 32)
+[   13.686896] integrity: Platform Keyring initialized
+[   13.731567] Freeing initrd memory: 2116K
+[   13.750816] cryptd: max_cpu_qlen set to 1000
+[   13.850948] tsc: Refined TSC clocksource calibration: 3249.990 MHz
+[   13.853006] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2ed8c222f6a, max_idle_ns: 440795368080 ns
+[   13.885162] clocksource: Switched to clocksource tsc
+[   14.291847] NET: Registered PF_ALG protocol family
+[   14.293251] Key type asymmetric registered
+[   14.293606] Asymmetric key parser 'x509' registered
+[   14.293848] Asymmetric key parser 'pkcs8' registered
+[   14.297437] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 240)
+[   14.304449] io scheduler mq-deadline registered
+[   14.304815] io scheduler kyber registered
+[   14.306385] io scheduler bfq registered
+[   14.341068] input: Power Button as /devices/platform/LNXPWRBN:00/input/input0
+[   14.350234] ACPI: button: Power Button [PWRF]
+[   14.936600] ACPI: \_SB_.GSIG: Enabled at IRQ 22
+[   14.993396] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[   15.029277] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[   15.196795] Non-volatile memory driver v1.3
+[   15.840368] brd: module loaded
+[   16.229006] loop: module loaded
+[   19.513669] drbd: initialized. Version: 8.4.11 (api:1/proto:86-101)
+[   19.514785] drbd: built-in
+[   19.514948] drbd: registered as block device major 147
+[   19.524078] rbd: loaded (major 252)
+[   19.546930] zram: Added device: zram0
+[   19.649771] null_blk: disk nullb0 created
+[   19.650345] null_blk: module loaded
+[   19.662906] Guest personality initialized and is inactive
+[   19.670978] VMCI host device registered (name=vmci, major=10, minor=262)
+[   19.671314] Initialized host personality
+[   19.733357] Loading iSCSI transport class v2.0-870.
+[   19.759291] iscsi: registered transport (tcp)
+[   19.771177] Loading mpi3mr version 8.17.0.3.50
+[   19.773947] ipr: IBM Power RAID SCSI Device Driver version: 2.6.4 (March 14, 2017)
+[   19.790980] VMware PVSCSI driver - version 1.0.7.0-k
+[   19.795036] st: Version 20160209, fixed bufsize 32768, s/g segs 256
+[   19.800951] SCSI Media Changer driver v0.25 
+[   19.862603] scsi_debug:sdebug_driver_probe: scsi_debug: trim poll_queues to 0. poll_q/nr_hw = (0/1)
+[   19.863695] scsi host0: scsi_debug: version 0191 [20210520]
+[   19.863695]   dev_size_mb=8, opts=0x0, submit_queues=1, statistics=0
+[   19.909167] Key type psk registered
+[   19.935880] scsi 0:0:0:0: Direct-Access     Linux    scsi_debug       0191 PQ: 0 ANSI: 7
+[   19.996361] scsi 0:0:0:0: Power-on or device reset occurred
+[   20.109713] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[   20.144747] sd 0:0:0:0: [sda] 16384 512-byte logical blocks: (8.39 MB/8.00 MiB)
+[   20.153772] sd 0:0:0:0: [sda] Write Protect is off
+[   20.158717] sd 0:0:0:0: [sda] Mode Sense: 73 00 10 08
+[   20.183300] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[   20.232128] sd 0:0:0:0: [sda] permanent stream count = 5
+[   20.252317] sd 0:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[   20.253355] sd 0:0:0:0: [sda] Optimal transfer size 524288 bytes
+[   20.437262] ACPI: \_SB_.GSIA: Enabled at IRQ 16
+[   20.467680] ahci 0000:00:1f.2: AHCI vers 0001.0000, 32 command slots, 1.5 Gbps, SATA mode
+[   20.468857] ahci 0000:00:1f.2: 6/6 ports implemented (port mask 0x3f)
+[   20.469309] ahci 0000:00:1f.2: flags: 64bit ncq only 
+[   20.579846] sd 0:0:0:0: [sda] Attached SCSI disk
+[   20.679915] scsi host1: ahci
+[   20.757801] scsi host2: ahci
+[   20.821447] scsi host3: ahci
+[   20.857114] scsi host4: ahci
+[   20.887264] scsi host5: ahci
+[   20.920061] scsi host6: ahci
+[   20.942683] ata1: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2100 irq 24 lpm-pol 1
+[   20.943193] ata2: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2180 irq 24 lpm-pol 1
+[   20.943491] ata3: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2200 irq 24 lpm-pol 1
+[   20.943819] ata4: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2280 irq 24 lpm-pol 1
+[   20.944139] ata5: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2300 irq 24 lpm-pol 1
+[   20.944445] ata6: SATA max UDMA/133 abar m4096@0xfebd2000 port 0xfebd2380 irq 24 lpm-pol 1
+[   21.015394] scsi host7: pata_legacy
+[   21.033181] ata7: PATA max PIO4 cmd 0x1f0 ctl 0x3f6 irq 14 lpm-pol 0
+[   21.269911] ata2: SATA link down (SStatus 0 SControl 300)
+[   21.277320] ata1: SATA link down (SStatus 0 SControl 300)
+[   21.281197] ata3: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[   21.294552] ata5: SATA link down (SStatus 0 SControl 300)
+[   21.295406] ata4: SATA link down (SStatus 0 SControl 300)
+[   21.298030] ata3.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[   21.298872] ata3.00: applying bridge limits
+[   21.305406] ata3.00: configured for UDMA/100
+[   21.309220] ata6: SATA link down (SStatus 0 SControl 300)
+[   21.325308] scsi 3:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[   21.404926] sr 3:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[   21.450361] cdrom: Uniform CD-ROM driver Revision: 3.20
+[   21.579330] sr 3:0:0:0: Attached scsi CD-ROM sr0
+[   21.591408] sr 3:0:0:0: Attached scsi generic sg1 type 5
+[   21.872817] scsi host7: pata_legacy
+[   21.880947] ata7: PATA max PIO4 cmd 0x170 ctl 0x376 irq 15 lpm-pol 0
+[   22.191621] Rounding down aligned max_sectors from 4294967295 to 4294967288
+[   22.200420] db_root: cannot open: /etc/target
+[   22.341338] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
+[   22.341767] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+[   22.342231] eql: Equalizer2002: Simon Janes (simon@ncm.com) and David S. Miller (davem@redhat.com)
+[   22.399395] MACsec IEEE 802.1AE
+[   22.410535] tun: Universal TUN/TAP device driver, 1.6
+[   22.521720] ixgbevf: Intel(R) 10 Gigabit PCI Express Virtual Function Network Driver
+[   22.522376] ixgbevf: Copyright (c) 2009 - 2024 Intel Corporation.
+[   22.548119] VMware vmxnet3 virtual NIC driver - version 1.9.0.0-k-NAPI
+[   22.567399] VFIO - User Level meta-driver version: 0.3
+[   22.598673] aoe: AoE v85 initialised.
+[   22.609841] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[   22.617518] serio: i8042 KBD port at 0x60,0x64 irq 1
+[   22.618792] serio: i8042 AUX port at 0x60,0x64 irq 12
+[   22.679445] mousedev: PS/2 mouse device common for all mice
+[   22.714804] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[   22.724778] rtc_cmos PNP0B00:00: RTC can wake from S4
+[   22.763446] rtc_cmos PNP0B00:00: registered as rtc0
+[   22.764936] rtc_cmos PNP0B00:00: setting system clock to 2026-05-11T22:48:04 UTC (1778539684)
+[   22.766352] rtc_cmos PNP0B00:00: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+[   22.768836] pps_ldisc: PPS line discipline registered
+[   22.771913] intel_powerclamp: CPU does not support MWAIT
+[   22.804750] softdog: initialized. soft_noboot=0 soft_margin=60 sec soft_panic=0 (nowayout=0)
+[   22.805306] softdog:              soft_reboot_cmd=<not set> soft_active_on_boot=0
+[   22.825635] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[   22.826155] device-mapper: uevent: version 1.0.3
+[   22.837798] device-mapper: ioctl: 4.50.0-ioctl (2025-04-28) initialised: dm-devel@lists.linux.dev
+[   22.854532] device-mapper: multipath round-robin: version 1.2.0 loaded
+[   22.855009] device-mapper: multipath queue-length: version 0.2.0 loaded
+[   22.855683] device-mapper: multipath service-time: version 0.3.0 loaded
+[   22.858830] device-mapper: dm-log-userspace: version 1.3.0 loaded
+[   22.862608] amd_pstate: the _CPC object is not present in SBIOS or ACPI disabled
+[   22.916756] No iBFT detected.
+[   22.979544] comedi: version 0.7.76 - http://www.comedi.org
+[   22.990006] comedi comedi0: comedi_test: 1000000 microvolt, 100000 microsecond waveform attached
+[   23.014759] comedi comedi0: driver 'comedi_test' has successfully auto-configured 'comedi_test'.
+[   23.092599] surface_gpe: no compatible Microsoft Surface device found, exiting
+[   23.096234] hv_utils: Registering HyperV Utility Driver
+[   23.146727] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[   23.161489] drop_monitor: Initializing network drop monitor service
+[   23.165586] GACT probability on
+[   23.166580] Mirror/redirect action on
+[   23.168671] Simple TC action Loaded
+[   23.190247] netem: version 1.3
+[   23.191610] u32 classifier
+[   23.191765]     Performance counters on
+[   23.191915]     input device check on
+[   23.192056]     Actions configured
+[   23.232319] The DCCP match is deprecated and scheduled to be removed in 2027.
+[   23.232319] Please contact the netfilter-devel mailing list or update your iptables rules
+[   23.235474] xt_time: kernel timezone is -0000
+[   23.237111] IPVS: Registered protocols (TCP, UDP, SCTP, AH, ESP)
+[   23.238128] IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+[   23.245329] IPVS: ipvs loaded.
+[   23.245768] IPVS: [rr] scheduler registered.
+[   23.246006] IPVS: [wrr] scheduler registered.
+[   23.246372] IPVS: [lc] scheduler registered.
+[   23.246566] IPVS: [wlc] scheduler registered.
+[   23.246754] IPVS: [fo] scheduler registered.
+[   23.246924] IPVS: [ovf] scheduler registered.
+[   23.247342] IPVS: [lblc] scheduler registered.
+[   23.247760] IPVS: [lblcr] scheduler registered.
+[   23.248014] IPVS: [dh] scheduler registered.
+[   23.248194] IPVS: [sh] scheduler registered.
+[   23.248400] IPVS: [mh] scheduler registered.
+[   23.248614] IPVS: [sed] scheduler registered.
+[   23.248791] IPVS: [nq] scheduler registered.
+[   23.248992] IPVS: [twos] scheduler registered.
+[   23.250196] IPVS: [sip] pe registered.
+[   23.252280] ipip: IPv4 and MPLS over IPv4 tunneling driver
+[   23.275675] gre: GRE over IPv4 demultiplexer driver
+[   23.276250] ip_gre: GRE over IPv4 tunneling driver
+[   23.329754] IPv4 over IPsec tunneling driver
+[   23.350899] Initializing XFRM netlink socket
+[   23.352045] IPsec XFRM device driver
+[   23.358553] NET: Registered PF_INET6 protocol family
+[   23.445357] Segment Routing with IPv6
+[   23.445833] RPL Segment Routing with IPv6
+[   23.447820] In-situ OAM (IOAM) with IPv6
+[   23.451412] mip6: Mobile IPv6
+[   23.476182] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[   23.520409] ip6_gre: GRE over IPv6 tunneling driver
+[   23.541713] NET: Registered PF_PACKET protocol family
+[   23.542318] PFKEY is deprecated and scheduled to be removed in 2027, please contact the netdev mailing list
+[   23.543083] NET: Registered PF_KEY protocol family
+[   23.545729] Bridge firewalling registered
+[   23.551412] RPC: Registered rdma transport module.
+[   23.551770] RPC: Registered rdma backchannel transport module.
+[   23.558161] NET: Registered PF_KCM protocol family
+[   23.568182] l2tp_core: L2TP core driver, V2.0
+[   23.568544] l2tp_ip: L2TP IP encapsulation support (L2TPv3)
+[   23.575433] l2tp_netlink: L2TP netlink interface
+[   23.577289] l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)
+[   23.578313] l2tp_debugfs: L2TP debugfs support
+[   23.578535] l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)
+[   23.579588] 8021q: 802.1Q VLAN Support v1.8
+[   23.582931] sctp: Hash tables configured (bind 256/256)
+[   23.608285] NET: Registered PF_RDS protocol family
+[   23.619974] Registered RDS/infiniband transport
+[   23.642851] Registered RDS/tcp transport
+[   23.643254] tipc: Activated (version 2.0.0)
+[   23.650959] NET: Registered PF_TIPC protocol family
+[   23.662931] tipc: Started in single node mode
+[   23.664490] 9pnet: Installing 9P2000 support
+[   23.667210] Key type dns_resolver registered
+[   23.667878] Key type ceph registered
+[   23.675999] libceph: loaded (mon/osd proto 15/24)
+[   23.678944] openvswitch: Open vSwitch switching datapath
+[   23.697931] NET: Registered PF_VSOCK protocol family
+[   23.702057] mpls_gso: MPLS GSO support
+[   23.744138] IPI shorthand broadcast: enabled
+[   26.534719] sched_clock: Marking stable (26448104036, 86037260)->(26679104444, -144963148)
+[   26.557664] registered taskstats version 1
+[   26.564151] Loading compiled-in X.509 certificates
+[   27.921998] Demotion targets for Node 0: null
+[   27.928175] Key type .fscrypt registered
+[   27.928432] Key type fscrypt-provisioning registered
+[   28.018381] Btrfs loaded, zoned=yes, fsverity=yes
+[   28.023165] Key type encrypted registered
+[   28.023531] AppArmor: AppArmor sha256 policy hashing enabled
+[   28.024254] ima: No TPM chip found, activating TPM-bypass!
+[   28.024966] ima: Allocated hash algorithm: sha256
+[   28.029759] ima: No architecture policies found
+[   28.033800] evm: Initialising EVM extended attributes:
+[   28.034062] evm: security.selinux
+[   28.034699] evm: security.SMACK64 (disabled)
+[   28.034876] evm: security.SMACK64EXEC (disabled)
+[   28.035044] evm: security.SMACK64TRANSMUTE (disabled)
+[   28.035220] evm: security.SMACK64MMAP (disabled)
+[   28.035381] evm: security.apparmor
+[   28.035545] evm: security.ima
+[   28.035701] evm: security.capability
+[   28.035867] evm: HMAC attrs: 0x1
+[   28.048838] netconsole: network logging started
+[   28.061543] RAS: Correctable Errors collector initialized.
+[   29.579674] Freeing unused kernel image (initmem) memory: 12132K
+[   29.581196] Write protecting the kernel read-only data: 81920k
+[   29.607041] Freeing unused kernel image (text/rodata gap) memory: 2008K
+[   29.622717] Freeing unused kernel image (rodata/data gap) memory: 1432K
+[   38.932208] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[   38.934483] Run /init as init process
+[   38.934964]   with arguments:
+[   38.935207]     /init
+[   38.935374]   with environment:
+[   38.935561]     HOME=/
+[   38.935769]     TERM=linux
+[init] all interfaces:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: bond0: <BROADCAST,MULTICAST400> mtu 1500 qdisc noop qlen 1000
+    link/ether a6:c6:df:59:b1:0b brd ff:ff:ff:ff:ff:ff
+3: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop qlen 1000
+    link/ether d6:40:41:be:3a:27 brd ff:ff:ff:ff:ff:ff
+4: eql: <400> mtu 576 qdisc noop qlen 5
+    link/slip 
+5: ifb0: <BROADCAST,NOARP> mtu 1500 qdisc noop qlen 32
+    link/ether 7a:45:83:90:0c:d9 brd ff:ff:ff:ff:ff:ff
+6: ifb1: <BROADCAST,NOARP> mtu 1500 qdisc noop qlen 32
+    link/ether 3e:ab:0f:b4:89:c6 brd ff:ff:ff:ff:ff:ff
+7: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+8: teql0: <NOARP> mtu 1500 qdisc noop qlen 100
+    link/void 
+9: tunl0@NONE: <NOARP> mtu 1480 qdisc noop qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+10: gre0@NONE: <NOARP> mtu 1476 qdisc noop qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+11: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+12: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+13: ip_vti0@NONE: <NOARP> mtu 1480 qdisc noop qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+14: ip6_vti0@NONE: <NOARP> mtu 1332 qdisc noop qlen 1000
+    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+15: sit0@NONE: <NOARP> mtu 1480 qdisc noop qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+16: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop qlen 1000
+    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+17: ip6gre0@NONE: <NOARP> mtu 1448 qdisc noop qlen 1000
+    link/[823] 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+[init] using IFACE=eth0
+[   39.802875] 8021q: adding VLAN 0 to HW filter on device eth0
+[init] addr/route configured:
+7: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:fe12:3456/64 scope link tentative 
+default via 10.0.2.2 dev eth0 
+10.0.2.0/24 dev eth0 scope link  src 10.0.2.15 
+[init] ping host gateway:
+PING 10.0.2.2 (10.0.2.2): 56 data bytes
+64 bytes from 10.0.2.2: seq=0 ttl=255 time=34.406 ms
+64 bytes from 10.0.2.2: seq=1 ttl=255 time=9.980 ms
+
+--- 10.0.2.2 ping statistics ---
+===== K-SMB-01 CIFS client int-overflow OOB read 0-DAY runtime test =====
+[init] kernel: Linux version 7.1.0-rc2+ (<redacted-builder>) (gcc (Debian 15.2.0-17) 15.2.0, GNU ld (GNU Binutils for Debian) 2.46) #6 SMP PREEMPT_DYNAMIC Mon May 11 22:46:50 UTC 2026
+[init] waiting for malicious SMB server on 10.0.2.2:1445...
+[init] enabling CIFS debug printing ...
+[init] mounting //10.0.2.2/SHARE /mnt (impacket, sec=ntlmssp guest, vers=2.0) ...
+Host "10.0.2.2" resolved to the following IP addresses: 10.0.2.2
+mount.cifs kernel mount options: ip=10.0.2.2,unc=\\10.0.2.2\SHARE,sec=ntlmssp,vers=2.0,rsize=65536,port=1445,user=guest,pass=********
+[   60.097041] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'source'
+[   60.100428] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'ip'
+[   60.101547] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'unc'
+[   60.102548] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'sec'
+[   60.103405] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'vers'
+[   60.104029] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'rsize'
+[   60.104766] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'port'
+[   60.109271] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'user'
+[   60.109836] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'pass'
+[   60.110878] CIFS: fs/smb/client/cifsfs.c: cifs_smb3_do_mount: devname=//10.0.2.2/SHARE flags=0x0
+[   60.112052] CIFS: fs/smb/client/connect.c: file mode: 0755  dir mode: 0755
+[   60.113170] CIFS: fs/smb/client/connect.c: VFS: in cifs_mount_get_session as Xid: 0 with uid: 0
+[   60.113594] CIFS: fs/smb/client/connect.c: UNC: \\10.0.2.2\SHARE
+[   60.115287] CIFS: fs/smb/client/connect.c: generic_ip_connect: connecting to 10.0.2.2:1445
+[   60.117065] CIFS: fs/smb/client/connect.c: Socket created
+[   60.117434] CIFS: fs/smb/client/connect.c: sndbuf 16384 rcvbuf 131072 rcvtimeo 0x6d6
+[   60.180859] CIFS: fs/smb/client/connect.c: VFS: in cifs_get_smb_ses as Xid: 1 with uid: 0
+[   60.181393] CIFS: fs/smb/client/connect.c: Existing smb sess not found
+[   60.182558] CIFS: fs/smb/client/connect.c: Demultiplex PID: 226
+[   60.187995] CIFS: fs/smb/client/smb2pdu.c: Negotiate protocol
+[   60.193601] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=0
+[   60.205272] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=106
+[   60.227708] CIFS: fs/smb/client/connect.c: RFC1002 header 0xa0
+[   60.231230] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 30 offset 128
+[   60.231530] CIFS: fs/smb/client/smb2misc.c: SMB2 len 158
+[   60.232766] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=1
+[   60.234059] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=0 mid=0 state=64
+[   60.235376] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.237236] CIFS: fs/smb/client/smb2pdu.c: mode 0x1
+[   60.237586] CIFS: fs/smb/client/smb2pdu.c: negotiated smb2.0 dialect
+[   60.240283] CIFS: fs/smb/client/connect.c: cifs_setup_session: channel connect bitmap: 0x1
+[   60.241149] CIFS: fs/smb/client/connect.c: Security Mode: 0x1 Capabilities: 0x300000 TimeAdjust: 0
+[   60.241787] CIFS: fs/smb/client/smb2pdu.c: Session Setup
+[   60.242796] CIFS: fs/smb/client/smb2pdu.c: sess setup type 2
+[   60.243425] CIFS: fs/smb/client/smb2pdu.c: Fresh session. Previous: 0
+[   60.244302] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=0
+[   60.245376] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=136
+[   60.257176] CIFS: fs/smb/client/connect.c: RFC1002 header 0xf0
+[   60.257955] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 168 offset 72
+[   60.258196] CIFS: fs/smb/client/smb2misc.c: SMB2 len 240
+[   60.258541] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 130 credits total=128
+[   60.259538] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=1 mid=1 state=64
+[   60.260036] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0xc0000016 to POSIX err -5
+[   60.260393] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.261256] CIFS: fs/smb/client/sess.c: decode_ntlmssp_challenge: negotiate=0xe2088235 challenge=0xe28a0215
+[   60.261916] CIFS: fs/smb/client/smb2pdu.c: rawntlmssp session setup challenge phase
+[   60.263295] CIFS: fs/smb/client/smb2pdu.c: Fresh session. Previous: 0
+[   60.270041] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=127
+[   60.272234] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=372
+[   60.280676] CIFS: fs/smb/client/connect.c: RFC1002 header 0x58
+[   60.281107] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 9 offset 72
+[   60.281325] CIFS: fs/smb/client/smb2misc.c: SMB2 len 81
+[   60.281561] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 130 credits total=257
+[   60.282340] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=1 mid=2 state=64
+[   60.282686] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.283476] CIFS: fs/smb/client/smb2pdu.c: SMB2/3 session established successfully
+[   60.284623] CIFS: fs/smb/client/sess.c: Cleared reconnect bitmask for chan 0; now 0x0
+[   60.286751] CIFS: fs/smb/client/connect.c: VFS: in cifs_setup_ipc as Xid: 2 with uid: 0
+[   60.288745] CIFS: fs/smb/client/smb2pdu.c: TCON
+[   60.293755] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=256
+[   60.294976] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=106
+[   60.302141] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.302758] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.303119] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=257
+[   60.304164] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=3 mid=3 state=64
+[   60.305898] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.307095] CIFS: fs/smb/client/smb2pdu.c: connection to pipe share
+[   60.308124] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_setup_ipc (xid = 2) rc = 0
+[   60.308649] CIFS: fs/smb/client/connect.c: IPC tcon rc=0 ipc tid=0x1
+[   60.309232] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_get_smb_ses (xid = 1) rc = 0
+[   60.310665] CIFS: fs/smb/client/dfs_cache.c: cache_refresh_path: search path: \10.0.2.2\SHARE
+[   60.312179] CIFS: fs/smb/client/dfs_cache.c: get_dfs_referral: ipc=\\10.0.2.2\IPC$ referral=\10.0.2.2\SHARE
+[   60.312989] CIFS: fs/smb/client/smb2ops.c: smb2_get_dfs_refer: path: \10.0.2.2\SHARE
+[   60.314617] CIFS: fs/smb/client/smb2pdu.c: SMB2 IOCTL
+[   60.315765] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=256
+[   60.316638] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=158
+[   60.321800] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.322923] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.323255] CIFS: fs/smb/client/smb2misc.c: SMB2 len 73
+[   60.323539] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=266
+[   60.324287] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=11 mid=4 state=64
+[   60.324886] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0xc000019c to POSIX err -95
+[   60.325269] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.327016] CIFS: fs/smb/client/dfs.c: dfs_mount_share: no dfs referral for \10.0.2.2\SHARE: -95
+[   60.327452] CIFS: fs/smb/client/dfs.c: dfs_mount_share: assuming non-dfs mount...
+[   60.328483] CIFS: fs/smb/client/connect.c: VFS: in cifs_get_tcon as Xid: 3 with uid: 0
+[   60.329093] CIFS: fs/smb/client/smb2pdu.c: TCON
+[   60.329566] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=265
+[   60.331206] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=108
+[   60.337951] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.338903] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.339466] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=266
+[   60.340721] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=3 mid=5 state=64
+[   60.341131] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.341633] CIFS: fs/smb/client/smb2pdu.c: connection to disk share
+[   60.342531] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_get_tcon (xid = 3) rc = 0
+[   60.342856] CIFS: fs/smb/client/connect.c: Tcon rc = 0
+[   60.343812] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.345033] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=265
+[   60.345810] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=156
+[   60.352339] CIFS: fs/smb/client/connect.c: RFC1002 header 0xa0
+[   60.352989] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.353321] CIFS: fs/smb/client/smb2misc.c: SMB2 len 153
+[   60.353683] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=275
+[   60.354629] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=5 mid=6 state=64
+[   60.355834] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.356925] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 5
+[   60.358355] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=274
+[   60.359436] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.367861] CIFS: fs/smb/client/connect.c: RFC1002 header 0x60
+[   60.368395] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 20 offset 72
+[   60.368674] CIFS: fs/smb/client/smb2misc.c: SMB2 len 92
+[   60.368915] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=284
+[   60.369553] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=7 state=64
+[   60.370019] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.372169] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 4
+[   60.372856] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=283
+[   60.374410] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.379529] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.379904] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 8 offset 72
+[   60.380175] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.380405] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=293
+[   60.380992] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=8 state=64
+[   60.381518] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.382891] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.383718] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=292
+[   60.384851] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=92
+[   60.390519] CIFS: fs/smb/client/connect.c: RFC1002 header 0x80
+[   60.390849] CIFS: fs/smb/client/smb2misc.c: SMB2 len 124
+[   60.391056] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=302
+[   60.391539] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=6 mid=9 state=64
+[   60.391998] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.393653] CIFS: fs/smb/client/connect.c: cifs_is_path_remote: full_path: 
+[   60.395406] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.401428] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.403923] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.410580] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.415170] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.416113] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.427924] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_mount (xid = 0) rc = 0
+[   60.437244] CIFS: fs/smb/client/inode.c: VFS: in cifs_root_iget as Xid: 4 with uid: 0
+[   60.452807] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.457466] CIFS: fs/smb/client/inode.c: looking for uniqueid=1695548
+[   60.465145] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 1695548
+[   60.465765] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 1695548 is new
+[   60.467888] CIFS: fs/smb/client/inode.c: VFS: leaving cifs_root_iget (xid = 4) rc = 0
+[   60.468673] CIFS: fs/smb/client/cifsfs.c: Get root dentry for 
+[   60.469292] CIFS: fs/smb/client/cifsfs.c: dentry root is: 000000009ebb5ad0
+[init] mount.cifs exit=0
+//10.0.2.2/SHARE on /mnt type cifs (rw,relatime,vers=2.0,sec=ntlmssp,cache=strict,upcall_target=app,username=guest,uid=0,noforceuid,gid=0,noforcegid,addr=10.0.2.2,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,reparse=nfs,nativesocket,symlink=native,rsize=65536,wsize=65536,bsize=1048576,echo_interval=60,actimeo=1,closetimeo=1)
+[init] dmesg snapshot after mount:
+[   60.345033] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=265
+[   60.345810] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=156
+[   60.352339] CIFS: fs/smb/client/connect.c: RFC1002 header 0xa0
+[   60.352989] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.353321] CIFS: fs/smb/client/smb2misc.c: SMB2 len 153
+[   60.353683] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=275
+[   60.354629] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=5 mid=6 state=64
+[   60.355834] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.356925] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 5
+[   60.358355] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=274
+[   60.359436] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.367861] CIFS: fs/smb/client/connect.c: RFC1002 header 0x60
+[   60.368395] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 20 offset 72
+[   60.368674] CIFS: fs/smb/client/smb2misc.c: SMB2 len 92
+[   60.368915] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=284
+[   60.369553] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=7 state=64
+[   60.370019] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.372169] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 4
+[   60.372856] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=283
+[   60.374410] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.379529] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.379904] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 8 offset 72
+[   60.380175] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.380405] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=293
+[   60.380992] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=8 state=64
+[   60.381518] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.382891] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.383718] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=292
+[   60.384851] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=92
+[   60.390519] CIFS: fs/smb/client/connect.c: RFC1002 header 0x80
+[   60.390849] CIFS: fs/smb/client/smb2misc.c: SMB2 len 124
+[   60.391056] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=302
+[   60.391539] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=6 mid=9 state=64
+[   60.391998] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.393653] CIFS: fs/smb/client/connect.c: cifs_is_path_remote: full_path: 
+[   60.395406] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.401428] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.403923] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.410580] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.415170] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.416113] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.427924] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_mount (xid = 0) rc = 0
+[   60.437244] CIFS: fs/smb/client/inode.c: VFS: in cifs_root_iget as Xid: 4 with uid: 0
+[   60.452807] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.457466] CIFS: fs/smb/client/inode.c: looking for uniqueid=1695548
+[   60.465145] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 1695548
+[   60.465765] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 1695548 is new
+[   60.467888] CIFS: fs/smb/client/inode.c: VFS: leaving cifs_root_iget (xid = 4) rc = 0
+[   60.468673] CIFS: fs/smb/client/cifsfs.c: Get root dentry for 
+[   60.469292] CIFS: fs/smb/client/cifsfs.c: dentry root is: 000000009ebb5ad0
+[init] listing /mnt:
+[   60.915980] CIFS: fs/smb/client/readdir.c: VFS: in cifs_readdir as Xid: 5 with uid: 0
+[   60.917282] CIFS: fs/smb/client/readdir.c: Full path:  start at: 0
+[   60.937453] CIFS: fs/smb/client/smb2pdu.c: num entries 1 last_index 3 srch start 000000004633fa40 srch end 000000004633fa40
+[   60.941404] CIFS: fs/smb/client/readdir.c: initiate cifs search rc 0
+[   60.942859] CIFS: fs/smb/client/readdir.c: found entry - pos_in_buf 0
+[   60.943270] CIFS: fs/smb/client/readdir.c: entry 2 found
+[   60.943535] CIFS: fs/smb/client/readdir.c: loop through 1 times filling dir for net buf 00000000c982a3f7
+[   60.946535] CIFS: VFS: Autodisabling the use of server inode numbers on \\10.0.2.2\SHARE
+[   60.946888] CIFS: VFS: The server doesn't seem to support them properly or the files might be on different servers (DFS)
+[   60.947267] CIFS: VFS: Hardlinks will not be recognized on this mount. Consider mounting with the "noserverino" option to silence this message.
+[   60.947776] CIFS: fs/smb/client/readdir.c: cifs_prime_dcache: for file
+[   60.948263] CIFS: fs/smb/client/inode.c: looking for uniqueid=3
+[   60.950790] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 3
+[   60.951055] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 3 is new
+[   60.951680] CIFS: fs/smb/client/readdir.c: last entry in buf at pos 3 file
+[   60.952245] CIFS: fs/smb/client/readdir.c: VFS: leaving cifs_readdir (xid = 5) rc = 0
+[   60.954711] CIFS: fs/smb/client/readdir.c: VFS: in cifs_readdir as Xid: 6 with uid: 0
+[   60.955109] CIFS: fs/smb/client/readdir.c: calling findnext2
+[   60.967121] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0x80000006 to POSIX err -61
+[   60.968743] CIFS: fs/smb/client/readdir.c: index not in buffer - could not findnext into it
+[   60.969452] CIFS: fs/smb/client/readdir.c: Could not find entry
+[   60.969996] CIFS: fs/smb/client/readdir.c: VFS: leaving cifs_readdir (xid = 6) rc = 0
+[   60.972618] CIFS: fs/smb/client/file.c: Closedir inode = 0x00000000a526b5df
+[   60.973301] CIFS: fs/smb/client/file.c: VFS: in cifs_closedir as Xid: 7 with uid: 0
+[   60.973880] CIFS: fs/smb/client/file.c: Freeing private data in close dir
+[   60.975094] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.987902] CIFS: fs/smb/client/file.c: Closing uncompleted readdir with rc 0
+[   60.988544] CIFS: fs/smb/client/file.c: closedir free smb buf in srch struct
+[   60.989294] CIFS: fs/smb/client/file.c: VFS: leaving cifs_closedir (xid = 7) rc = 0
+file
+[init] reading /mnt/file with dd bs=4096 count=1 (forces 4KB read → trigger int-overflow → copy_to_iter OOB) ...
+[   61.057977] CIFS: fs/smb/client/file.c: VFS: in cifs_open as Xid: 8 with uid: 0
+[   61.059638] CIFS: fs/smb/client/file.c: inode = 0x000000000af6f485 file flags are 0x8000 for \file
+[   61.061277] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   61.069731] CIFS: fs/smb/client/smb2pdu.c: Query Info
+[   61.079152] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 3
+[   61.079666] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 3 is unchanged
+[   61.081447] CIFS: fs/smb/client/file.c: VFS: leaving cifs_open (xid = 8) rc = 0
+[   61.082048] CIFS: fs/smb/client/file.c: Flush inode 000000000af6f485 file 00000000f52513ea rc 0
+[   61.088788] CIFS: fs/smb/client/file.c: VFS: in cifs_prepare_read as Xid: 9 with uid: 0
+[   61.089729] CIFS: fs/smb/client/file.c: cifs_issue_read: op=00000001[1] mapping=000000003123feff len=0/4096
+[   61.090724] CIFS: fs/smb/client/smb2pdu.c: smb2_async_readv: offset=0 bytes=4096
+[   61.096612] CIFS: fs/smb/client/transport.c: cifs_readv_receive: mid=23 offset=0 bytes=4096
+[   61.097182] CIFS: fs/smb/client/transport.c: 0: iov_base=00000000b30c9373 iov_len=80
+[   61.097563] CIFS: fs/smb/client/transport.c: cifs_readv_receive: total_read=80 data_offset=80
+[   61.099069] CIFS: fs/smb/client/smb2pdu.c: smb2_readv_callback: mid=23 state=16 result=-5 bytes=0/4096
+[   61.101645] CIFS: fs/smb/client/file.c: VFS: leaving cifs_free_subrequest (xid = 9) rc = -5
+dd: /mnt/file: Input/output error
+[   61.112107] CIFS: fs/smb/client/file.c: Flush inode 000000000af6f485 file 00000000f52513ea rc 0
+[   61.113519] CIFS: fs/smb/client/file.c: closing last open instance for inode 000000000af6f485
+[   61.114306] CIFS: fs/smb/client/file.c: VFS: in _cifsFileInfo_put as Xid: 10 with uid: 0
+[   61.114733] CIFS: fs/smb/client/smb2pdu.c: Close
+[init] dd exit=1
+[init] /tmp/leak first 256 bytes:
+[   63.299036] CIFS: fs/smb/client/connect.c: cifs_put_tcon: tc_count=2
+[   63.309573] CIFS: fs/smb/client/connect.c: cifs_put_tcon: tc_count=1
+[   63.310339] CIFS: fs/smb/client/connect.c: VFS: in cifs_put_tcon as Xid: 11 with uid: 0
+[   63.310877] CIFS: fs/smb/client/smb2pdu.c: Tree Disconnect
+[   63.317909] CIFS: fs/smb/client/fscache.c: cifs_fscache_release_super_cookie: (0x0000000000000000)
+[   63.319349] CIFS: fs/smb/client/connect.c: __cifs_put_smb_ses: id=0xecf12678 ses_count=1 ses_status=1 ipc=\\10.0.2.2\IPC$
+[   63.319860] CIFS: fs/smb/client/sess.c: Cleared reconnect bitmask for chan 0; now 0x0
+[   63.320413] CIFS: fs/smb/client/connect.c: VFS: in __cifs_put_smb_ses as Xid: 12 with uid: 0
+[   63.320926] CIFS: fs/smb/client/smb2pdu.c: disconnect session 00000000676ea820
+[   63.329529] CIFS: fs/smb/client/connect.c: \\10.0.2.2 __cifs_put_smb_ses: Session Logoff: rc=0
+===== DMESG (look for KASAN slab-out-of-bounds in copy_to_iter / cifs_readv_receive / handle_read_data) =====
+[   23.245768] IPVS: [rr] scheduler registered.
+[   23.246006] IPVS: [wrr] scheduler registered.
+[   23.246372] IPVS: [lc] scheduler registered.
+[   23.246566] IPVS: [wlc] scheduler registered.
+[   23.246754] IPVS: [fo] scheduler registered.
+[   23.246924] IPVS: [ovf] scheduler registered.
+[   23.247342] IPVS: [lblc] scheduler registered.
+[   23.247760] IPVS: [lblcr] scheduler registered.
+[   23.248014] IPVS: [dh] scheduler registered.
+[   23.248194] IPVS: [sh] scheduler registered.
+[   23.248400] IPVS: [mh] scheduler registered.
+[   23.248614] IPVS: [sed] scheduler registered.
+[   23.248791] IPVS: [nq] scheduler registered.
+[   23.248992] IPVS: [twos] scheduler registered.
+[   23.250196] IPVS: [sip] pe registered.
+[   23.252280] ipip: IPv4 and MPLS over IPv4 tunneling driver
+[   23.275675] gre: GRE over IPv4 demultiplexer driver
+[   23.276250] ip_gre: GRE over IPv4 tunneling driver
+[   23.329754] IPv4 over IPsec tunneling driver
+[   23.350899] Initializing XFRM netlink socket
+[   23.352045] IPsec XFRM device driver
+[   23.358553] NET: Registered PF_INET6 protocol family
+[   23.445357] Segment Routing with IPv6
+[   23.445833] RPL Segment Routing with IPv6
+[   23.447820] In-situ OAM (IOAM) with IPv6
+[   23.451412] mip6: Mobile IPv6
+[   23.476182] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[   23.520409] ip6_gre: GRE over IPv6 tunneling driver
+[   23.541713] NET: Registered PF_PACKET protocol family
+[   23.542318] PFKEY is deprecated and scheduled to be removed in 2027, please contact the netdev mailing list
+[   23.543083] NET: Registered PF_KEY protocol family
+[   23.545729] Bridge firewalling registered
+[   23.551412] RPC: Registered rdma transport module.
+[   23.551770] RPC: Registered rdma backchannel transport module.
+[   23.558161] NET: Registered PF_KCM protocol family
+[   23.568182] l2tp_core: L2TP core driver, V2.0
+[   23.568544] l2tp_ip: L2TP IP encapsulation support (L2TPv3)
+[   23.575433] l2tp_netlink: L2TP netlink interface
+[   23.577289] l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)
+[   23.578313] l2tp_debugfs: L2TP debugfs support
+[   23.578535] l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)
+[   23.579588] 8021q: 802.1Q VLAN Support v1.8
+[   23.582931] sctp: Hash tables configured (bind 256/256)
+[   23.608285] NET: Registered PF_RDS protocol family
+[   23.619974] Registered RDS/infiniband transport
+[   23.642851] Registered RDS/tcp transport
+[   23.643254] tipc: Activated (version 2.0.0)
+[   23.650959] NET: Registered PF_TIPC protocol family
+[   23.662931] tipc: Started in single node mode
+[   23.664490] 9pnet: Installing 9P2000 support
+[   23.667210] Key type dns_resolver registered
+[   23.667878] Key type ceph registered
+[   23.675999] libceph: loaded (mon/osd proto 15/24)
+[   23.678944] openvswitch: Open vSwitch switching datapath
+[   23.697931] NET: Registered PF_VSOCK protocol family
+[   23.702057] mpls_gso: MPLS GSO support
+[   23.744138] IPI shorthand broadcast: enabled
+[   26.534719] sched_clock: Marking stable (26448104036, 86037260)->(26679104444, -144963148)
+[   26.557664] registered taskstats version 1
+[   26.564151] Loading compiled-in X.509 certificates
+[   27.921998] Demotion targets for Node 0: null
+[   27.928175] Key type .fscrypt registered
+[   27.928432] Key type fscrypt-provisioning registered
+[   28.018381] Btrfs loaded, zoned=yes, fsverity=yes
+[   28.023165] Key type encrypted registered
+[   28.023531] AppArmor: AppArmor sha256 policy hashing enabled
+[   28.024254] ima: No TPM chip found, activating TPM-bypass!
+[   28.024966] ima: Allocated hash algorithm: sha256
+[   28.029759] ima: No architecture policies found
+[   28.033800] evm: Initialising EVM extended attributes:
+[   28.034062] evm: security.selinux
+[   28.034699] evm: security.SMACK64 (disabled)
+[   28.034876] evm: security.SMACK64EXEC (disabled)
+[   28.035044] evm: security.SMACK64TRANSMUTE (disabled)
+[   28.035220] evm: security.SMACK64MMAP (disabled)
+[   28.035381] evm: security.apparmor
+[   28.035545] evm: security.ima
+[   28.035701] evm: security.capability
+[   28.035867] evm: HMAC attrs: 0x1
+[   28.048838] netconsole: network logging started
+[   28.061543] RAS: Correctable Errors collector initialized.
+[   29.579674] Freeing unused kernel image (initmem) memory: 12132K
+[   29.581196] Write protecting the kernel read-only data: 81920k
+[   29.607041] Freeing unused kernel image (text/rodata gap) memory: 2008K
+[   29.622717] Freeing unused kernel image (rodata/data gap) memory: 1432K
+[   38.932208] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[   38.934483] Run /init as init process
+[   38.934964]   with arguments:
+[   38.935207]     /init
+[   38.935374]   with environment:
+[   38.935561]     HOME=/
+[   38.935769]     TERM=linux
+[   39.802875] 8021q: adding VLAN 0 to HW filter on device eth0
+[   60.097041] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'source'
+[   60.100428] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'ip'
+[   60.101547] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'unc'
+[   60.102548] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'sec'
+[   60.103405] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'vers'
+[   60.104029] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'rsize'
+[   60.104766] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'port'
+[   60.109271] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'user'
+[   60.109836] CIFS: fs/smb/client/fs_context.c: CIFS: parsing cifs mount option 'pass'
+[   60.110878] CIFS: fs/smb/client/cifsfs.c: cifs_smb3_do_mount: devname=//10.0.2.2/SHARE flags=0x0
+[   60.112052] CIFS: fs/smb/client/connect.c: file mode: 0755  dir mode: 0755
+[   60.113170] CIFS: fs/smb/client/connect.c: VFS: in cifs_mount_get_session as Xid: 0 with uid: 0
+[   60.113594] CIFS: fs/smb/client/connect.c: UNC: \\10.0.2.2\SHARE
+[   60.115287] CIFS: fs/smb/client/connect.c: generic_ip_connect: connecting to 10.0.2.2:1445
+[   60.117065] CIFS: fs/smb/client/connect.c: Socket created
+[   60.117434] CIFS: fs/smb/client/connect.c: sndbuf 16384 rcvbuf 131072 rcvtimeo 0x6d6
+[   60.180859] CIFS: fs/smb/client/connect.c: VFS: in cifs_get_smb_ses as Xid: 1 with uid: 0
+[   60.181393] CIFS: fs/smb/client/connect.c: Existing smb sess not found
+[   60.182558] CIFS: fs/smb/client/connect.c: Demultiplex PID: 226
+[   60.187995] CIFS: fs/smb/client/smb2pdu.c: Negotiate protocol
+[   60.193601] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=0
+[   60.205272] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=106
+[   60.227708] CIFS: fs/smb/client/connect.c: RFC1002 header 0xa0
+[   60.231230] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 30 offset 128
+[   60.231530] CIFS: fs/smb/client/smb2misc.c: SMB2 len 158
+[   60.232766] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=1
+[   60.234059] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=0 mid=0 state=64
+[   60.235376] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.237236] CIFS: fs/smb/client/smb2pdu.c: mode 0x1
+[   60.237586] CIFS: fs/smb/client/smb2pdu.c: negotiated smb2.0 dialect
+[   60.240283] CIFS: fs/smb/client/connect.c: cifs_setup_session: channel connect bitmap: 0x1
+[   60.241149] CIFS: fs/smb/client/connect.c: Security Mode: 0x1 Capabilities: 0x300000 TimeAdjust: 0
+[   60.241787] CIFS: fs/smb/client/smb2pdu.c: Session Setup
+[   60.242796] CIFS: fs/smb/client/smb2pdu.c: sess setup type 2
+[   60.243425] CIFS: fs/smb/client/smb2pdu.c: Fresh session. Previous: 0
+[   60.244302] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=0
+[   60.245376] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=136
+[   60.257176] CIFS: fs/smb/client/connect.c: RFC1002 header 0xf0
+[   60.257955] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 168 offset 72
+[   60.258196] CIFS: fs/smb/client/smb2misc.c: SMB2 len 240
+[   60.258541] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 130 credits total=128
+[   60.259538] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=1 mid=1 state=64
+[   60.260036] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0xc0000016 to POSIX err -5
+[   60.260393] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.261256] CIFS: fs/smb/client/sess.c: decode_ntlmssp_challenge: negotiate=0xe2088235 challenge=0xe28a0215
+[   60.261916] CIFS: fs/smb/client/smb2pdu.c: rawntlmssp session setup challenge phase
+[   60.263295] CIFS: fs/smb/client/smb2pdu.c: Fresh session. Previous: 0
+[   60.270041] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=127
+[   60.272234] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=372
+[   60.280676] CIFS: fs/smb/client/connect.c: RFC1002 header 0x58
+[   60.281107] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 9 offset 72
+[   60.281325] CIFS: fs/smb/client/smb2misc.c: SMB2 len 81
+[   60.281561] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 130 credits total=257
+[   60.282340] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=1 mid=2 state=64
+[   60.282686] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.283476] CIFS: fs/smb/client/smb2pdu.c: SMB2/3 session established successfully
+[   60.284623] CIFS: fs/smb/client/sess.c: Cleared reconnect bitmask for chan 0; now 0x0
+[   60.286751] CIFS: fs/smb/client/connect.c: VFS: in cifs_setup_ipc as Xid: 2 with uid: 0
+[   60.288745] CIFS: fs/smb/client/smb2pdu.c: TCON
+[   60.293755] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=256
+[   60.294976] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=106
+[   60.302141] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.302758] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.303119] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=257
+[   60.304164] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=3 mid=3 state=64
+[   60.305898] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.307095] CIFS: fs/smb/client/smb2pdu.c: connection to pipe share
+[   60.308124] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_setup_ipc (xid = 2) rc = 0
+[   60.308649] CIFS: fs/smb/client/connect.c: IPC tcon rc=0 ipc tid=0x1
+[   60.309232] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_get_smb_ses (xid = 1) rc = 0
+[   60.310665] CIFS: fs/smb/client/dfs_cache.c: cache_refresh_path: search path: \10.0.2.2\SHARE
+[   60.312179] CIFS: fs/smb/client/dfs_cache.c: get_dfs_referral: ipc=\\10.0.2.2\IPC$ referral=\10.0.2.2\SHARE
+[   60.312989] CIFS: fs/smb/client/smb2ops.c: smb2_get_dfs_refer: path: \10.0.2.2\SHARE
+[   60.314617] CIFS: fs/smb/client/smb2pdu.c: SMB2 IOCTL
+[   60.315765] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=256
+[   60.316638] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=158
+[   60.321800] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.322923] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.323255] CIFS: fs/smb/client/smb2misc.c: SMB2 len 73
+[   60.323539] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=266
+[   60.324287] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=11 mid=4 state=64
+[   60.324886] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0xc000019c to POSIX err -95
+[   60.325269] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.327016] CIFS: fs/smb/client/dfs.c: dfs_mount_share: no dfs referral for \10.0.2.2\SHARE: -95
+[   60.327452] CIFS: fs/smb/client/dfs.c: dfs_mount_share: assuming non-dfs mount...
+[   60.328483] CIFS: fs/smb/client/connect.c: VFS: in cifs_get_tcon as Xid: 3 with uid: 0
+[   60.329093] CIFS: fs/smb/client/smb2pdu.c: TCON
+[   60.329566] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=265
+[   60.331206] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=108
+[   60.337951] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.338903] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.339466] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 1 credits total=266
+[   60.340721] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=3 mid=5 state=64
+[   60.341131] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.341633] CIFS: fs/smb/client/smb2pdu.c: connection to disk share
+[   60.342531] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_get_tcon (xid = 3) rc = 0
+[   60.342856] CIFS: fs/smb/client/connect.c: Tcon rc = 0
+[   60.343812] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.345033] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=265
+[   60.345810] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=156
+[   60.352339] CIFS: fs/smb/client/connect.c: RFC1002 header 0xa0
+[   60.352989] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.353321] CIFS: fs/smb/client/smb2misc.c: SMB2 len 153
+[   60.353683] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=275
+[   60.354629] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=5 mid=6 state=64
+[   60.355834] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.356925] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 5
+[   60.358355] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=274
+[   60.359436] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.367861] CIFS: fs/smb/client/connect.c: RFC1002 header 0x60
+[   60.368395] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 20 offset 72
+[   60.368674] CIFS: fs/smb/client/smb2misc.c: SMB2 len 92
+[   60.368915] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=284
+[   60.369553] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=7 state=64
+[   60.370019] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.372169] CIFS: fs/smb/client/smb2pdu.c: Query FSInfo level 4
+[   60.372856] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=283
+[   60.374410] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=109
+[   60.379529] CIFS: fs/smb/client/connect.c: RFC1002 header 0x50
+[   60.379904] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 8 offset 72
+[   60.380175] CIFS: fs/smb/client/smb2misc.c: SMB2 len 80
+[   60.380405] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=293
+[   60.380992] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=16 mid=8 state=64
+[   60.381518] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.382891] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.383718] CIFS: fs/smb/client/transport.c: wait_for_free_credits: remove 1 credits total=292
+[   60.384851] CIFS: fs/smb/client/transport.c: Sending smb: smb_len=92
+[   60.390519] CIFS: fs/smb/client/connect.c: RFC1002 header 0x80
+[   60.390849] CIFS: fs/smb/client/smb2misc.c: SMB2 len 124
+[   60.391056] CIFS: fs/smb/client/smb2ops.c: smb2_add_credits: added 10 credits total=302
+[   60.391539] CIFS: fs/smb/client/transport.c: cifs_sync_mid_result: cmd=6 mid=9 state=64
+[   60.391998] CIFS: fs/smb/client/misc.c: Null buffer passed to cifs_small_buf_release
+[   60.393653] CIFS: fs/smb/client/connect.c: cifs_is_path_remote: full_path: 
+[   60.395406] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.401428] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.403923] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.410580] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   60.415170] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.416113] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.427924] CIFS: fs/smb/client/connect.c: VFS: leaving cifs_mount (xid = 0) rc = 0
+[   60.437244] CIFS: fs/smb/client/inode.c: VFS: in cifs_root_iget as Xid: 4 with uid: 0
+[   60.452807] CIFS: fs/smb/client/smb2misc.c: SMB2 data length 0 offset 0
+[   60.457466] CIFS: fs/smb/client/inode.c: looking for uniqueid=1695548
+[   60.465145] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 1695548
+[   60.465765] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 1695548 is new
+[   60.467888] CIFS: fs/smb/client/inode.c: VFS: leaving cifs_root_iget (xid = 4) rc = 0
+[   60.468673] CIFS: fs/smb/client/cifsfs.c: Get root dentry for 
+[   60.469292] CIFS: fs/smb/client/cifsfs.c: dentry root is: 000000009ebb5ad0
+[   60.915980] CIFS: fs/smb/client/readdir.c: VFS: in cifs_readdir as Xid: 5 with uid: 0
+[   60.917282] CIFS: fs/smb/client/readdir.c: Full path:  start at: 0
+[   60.937453] CIFS: fs/smb/client/smb2pdu.c: num entries 1 last_index 3 srch start 000000004633fa40 srch end 000000004633fa40
+[   60.941404] CIFS: fs/smb/client/readdir.c: initiate cifs search rc 0
+[   60.942859] CIFS: fs/smb/client/readdir.c: found entry - pos_in_buf 0
+[   60.943270] CIFS: fs/smb/client/readdir.c: entry 2 found
+[   60.943535] CIFS: fs/smb/client/readdir.c: loop through 1 times filling dir for net buf 00000000c982a3f7
+[   60.946535] CIFS: VFS: Autodisabling the use of server inode numbers on \\10.0.2.2\SHARE
+[   60.946888] CIFS: VFS: The server doesn't seem to support them properly or the files might be on different servers (DFS)
+[   60.947267] CIFS: VFS: Hardlinks will not be recognized on this mount. Consider mounting with the "noserverino" option to silence this message.
+[   60.947776] CIFS: fs/smb/client/readdir.c: cifs_prime_dcache: for file
+[   60.948263] CIFS: fs/smb/client/inode.c: looking for uniqueid=3
+[   60.950790] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 3
+[   60.951055] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 3 is new
+[   60.951680] CIFS: fs/smb/client/readdir.c: last entry in buf at pos 3 file
+[   60.952245] CIFS: fs/smb/client/readdir.c: VFS: leaving cifs_readdir (xid = 5) rc = 0
+[   60.954711] CIFS: fs/smb/client/readdir.c: VFS: in cifs_readdir as Xid: 6 with uid: 0
+[   60.955109] CIFS: fs/smb/client/readdir.c: calling findnext2
+[   60.967121] CIFS: fs/smb/client/smb2maperror.c: Mapping SMB2 status code 0x80000006 to POSIX err -61
+[   60.968743] CIFS: fs/smb/client/readdir.c: index not in buffer - could not findnext into it
+[   60.969452] CIFS: fs/smb/client/readdir.c: Could not find entry
+[   60.969996] CIFS: fs/smb/client/readdir.c: VFS: leaving cifs_readdir (xid = 6) rc = 0
+[   60.972618] CIFS: fs/smb/client/file.c: Closedir inode = 0x00000000a526b5df
+[   60.973301] CIFS: fs/smb/client/file.c: VFS: in cifs_closedir as Xid: 7 with uid: 0
+[   60.973880] CIFS: fs/smb/client/file.c: Freeing private data in close dir
+[   60.975094] CIFS: fs/smb/client/smb2pdu.c: Close
+[   60.987902] CIFS: fs/smb/client/file.c: Closing uncompleted readdir with rc 0
+[   60.988544] CIFS: fs/smb/client/file.c: closedir free smb buf in srch struct
+[   60.989294] CIFS: fs/smb/client/file.c: VFS: leaving cifs_closedir (xid = 7) rc = 0
+[   61.057977] CIFS: fs/smb/client/file.c: VFS: in cifs_open as Xid: 8 with uid: 0
+[   61.059638] CIFS: fs/smb/client/file.c: inode = 0x000000000af6f485 file flags are 0x8000 for \file
+[   61.061277] CIFS: fs/smb/client/smb2pdu.c: create/open
+[   61.069731] CIFS: fs/smb/client/smb2pdu.c: Query Info
+[   61.079152] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: revalidating inode 3
+[   61.079666] CIFS: fs/smb/client/inode.c: cifs_revalidate_cache: inode 3 is unchanged
+[   61.081447] CIFS: fs/smb/client/file.c: VFS: leaving cifs_open (xid = 8) rc = 0
+[   61.082048] CIFS: fs/smb/client/file.c: Flush inode 000000000af6f485 file 00000000f52513ea rc 0
+[   61.088788] CIFS: fs/smb/client/file.c: VFS: in cifs_prepare_read as Xid: 9 with uid: 0
+[   61.089729] CIFS: fs/smb/client/file.c: cifs_issue_read: op=00000001[1] mapping=000000003123feff len=0/4096
+[   61.090724] CIFS: fs/smb/client/smb2pdu.c: smb2_async_readv: offset=0 bytes=4096
+[   61.096612] CIFS: fs/smb/client/transport.c: cifs_readv_receive: mid=23 offset=0 bytes=4096
+[   61.097182] CIFS: fs/smb/client/transport.c: 0: iov_base=00000000b30c9373 iov_len=80
+[   61.097563] CIFS: fs/smb/client/transport.c: cifs_readv_receive: total_read=80 data_offset=80
+[   61.099069] CIFS: fs/smb/client/smb2pdu.c: smb2_readv_callback: mid=23 state=16 result=-5 bytes=0/4096
+[   61.101645] CIFS: fs/smb/client/file.c: VFS: leaving cifs_free_subrequest (xid = 9) rc = -5
+[   61.112107] CIFS: fs/smb/client/file.c: Flush inode 000000000af6f485 file 00000000f52513ea rc 0
+[   61.113519] CIFS: fs/smb/client/file.c: closing last open instance for inode 000000000af6f485
+[   61.114306] CIFS: fs/smb/client/file.c: VFS: in _cifsFileInfo_put as Xid: 10 with uid: 0
+[   61.114733] CIFS: fs/smb/client/smb2pdu.c: Close
+[   63.299036] CIFS: fs/smb/client/connect.c: cifs_put_tcon: tc_count=2
+[   63.309573] CIFS: fs/smb/client/connect.c: cifs_put_tcon: tc_count=1
+[   63.310339] CIFS: fs/smb/client/connect.c: VFS: in cifs_put_tcon as Xid: 11 with uid: 0
+[   63.310877] CIFS: fs/smb/client/smb2pdu.c: Tree Disconnect
+[   63.317909] CIFS: fs/smb/client/fscache.c: cifs_fscache_release_super_cookie: (0x0000000000000000)
+[   63.319349] CIFS: fs/smb/client/connect.c: __cifs_put_smb_ses: id=0xecf12678 ses_count=1 ses_status=1 ipc=\\10.0.2.2\IPC$
+[   63.319860] CIFS: fs/smb/client/sess.c: Cleared reconnect bitmask for chan 0; now 0x0
+[   63.320413] CIFS: fs/smb/client/connect.c: VFS: in __cifs_put_smb_ses as Xid: 12 with uid: 0
+[   63.320926] CIFS: fs/smb/client/smb2pdu.c: disconnect session 00000000676ea820
+[   63.329529] CIFS: fs/smb/client/connect.c: \\10.0.2.2 __cifs_put_smb_ses: Session Logoff: rc=0
+===== END =====
+[   66.635166] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   66.640298] ACPI: PM: Preparing to enter system sleep state S5
+[   66.644627] kvm: exiting hardware virtualization
+[   66.645605] reboot: Power down
