@@ -1,0 +1,101 @@
+[   32.888732] BUG: KASAN: slab-out-of-bounds in chap_base64_decode+0x4b/0x120
+[   32.889692] Write of size 1 at addr ffff888107e1e930 by task kworker/1:2/72
+[   32.889956] 
+[   32.890698] CPU: 1 UID: 0 PID: 72 Comm: kworker/1:2 Not tainted 7.0.0+ #1 PREEMPT(lazy) 
+[   32.890971] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.17.0-debian-1.17.0-1 04/01/2014
+[   32.891205] Workqueue: events iscsi_target_do_login_rx
+[   32.892075] Call Trace:
+[   32.892190]  <TASK>
+[   32.892320]  dump_stack_lvl+0x5d/0x80
+[   32.892460]  print_report+0x170/0x4de
+[   32.892521]  ? __pfx__raw_spin_lock_irqsave+0x10/0x10
+[   32.892584]  ? __virt_addr_valid+0x11e/0x1d0
+[   32.892651]  kasan_report+0xda/0x110
+[   32.892706]  ? chap_base64_decode+0x4b/0x120
+[   32.892770]  ? chap_base64_decode+0x4b/0x120
+[   32.892849]  chap_base64_decode+0x4b/0x120
+[   32.892921]  chap_server_compute_hash.isra.0+0x8df/0xaa0
+[   32.892991]  ? __pfx_chap_server_compute_hash.isra.0+0x10/0x10
+[   32.893064]  ? stack_trace_save+0x93/0xd0
+[   32.893111]  ? filter_irq_stacks+0x24/0x60
+[   32.893157]  ? stack_depot_save_flags+0x28/0x910
+[   32.893241]  ? kthread+0x1b4/0x200
+[   32.893283]  ? ret_from_fork+0x3e7/0x4f0
+[   32.893335]  ? ret_from_fork_asm+0x1a/0x30
+[   32.893465]  ? iscsi_decode_text_input+0x8ff/0xb10
+[   32.893534]  chap_main_loop+0x148/0x6b0
+[   32.893583]  ? __pfx_iscsi_decode_text_input+0x10/0x10
+[   32.893645]  ? __pfx_chap_main_loop+0x10/0x10
+[   32.893697]  ? memcmp+0x45/0xb0
+[   32.893750]  iscsi_target_do_login+0x7cb/0x930
+[   32.893816]  ? __pfx_iscsi_target_do_login+0x10/0x10
+[   32.893876]  ? _raw_write_lock_bh+0x87/0xe0
+[   32.893923]  ? __pfx__raw_write_lock_bh+0x10/0x10
+[   32.893981]  iscsi_target_do_login_rx+0x3df/0x5a0
+[   32.894050]  process_one_work+0x38c/0x6c0
+[   32.894116]  ? assign_work+0xc6/0x180
+[   32.894167]  worker_thread+0x321/0x590
+[   32.894232]  ? __pfx_worker_thread+0x10/0x10
+[   32.894282]  kthread+0x1b4/0x200
+[   32.894326]  ? __pfx_kthread+0x10/0x10
+[   32.894373]  ret_from_fork+0x3e7/0x4f0
+[   32.894428]  ? __pfx_ret_from_fork+0x10/0x10
+[   32.894482]  ? native_load_gs_index+0x2e/0x50
+[   32.894560]  ? __switch_to+0x238/0x630
+[   32.894635]  ? __switch_to_asm+0x33/0x70
+[   32.894691]  ? __pfx_kthread+0x10/0x10
+[   32.894738]  ? __pfx_kthread+0x10/0x10
+[   32.894788]  ret_from_fork_asm+0x1a/0x30
+[   32.894923]  </TASK>
+[   32.895032] 
+[   32.899887] Allocated by task 72:
+[   32.900132]  kasan_save_stack+0x30/0x50
+[   32.900363]  kasan_save_track+0x14/0x30
+[   32.900503]  __kasan_kmalloc+0x9a/0xb0
+[   32.900637]  __kmalloc_noprof+0x1f1/0x620
+[   32.900777]  chap_server_compute_hash.isra.0+0x16f/0xaa0
+[   32.900949]  chap_main_loop+0x148/0x6b0
+[   32.901143]  iscsi_target_do_login+0x7cb/0x930
+[   32.901340]  iscsi_target_do_login_rx+0x3df/0x5a0
+[   32.901520]  process_one_work+0x38c/0x6c0
+[   32.901671]  worker_thread+0x321/0x590
+[   32.901811]  kthread+0x1b4/0x200
+[   32.901942]  ret_from_fork+0x3e7/0x4f0
+[   32.902079]  ret_from_fork_asm+0x1a/0x30
+[   32.902241] 
+[   32.902367] The buggy address belongs to the object at ffff888107e1e920
+[   32.902367]  which belongs to the cache kmalloc-16 of size 16
+[   32.902692] The buggy address is located 0 bytes to the right of
+[   32.902692]  allocated 16-byte region [ffff888107e1e920, ffff888107e1e930)
+[   32.903011] 
+[   32.905156] The buggy address belongs to the physical page:
+[   32.905665] page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x107e1e
+[   32.906022] flags: 0x17ffffc0000000(node=0|zone=2|lastcpupid=0x1fffff)
+[   32.906658] page_type: f5(slab)
+[   32.907731] raw: 0017ffffc0000000 ffff888100041640 dead000000000100 dead000000000122
+[   32.908063] raw: 0000000000000000 0000000800800080 00000000f5000000 0000000000000000
+[   32.908387] page dumped because: kasan: bad access detected
+[   32.908551] 
+[   32.908631] Memory state around the buggy address:
+[   32.908956]  ffff888107e1e800: fc fc fc fc fa fb fc fc fa fb fc fc fc fc fc fc
+[   32.913286]  ffff888107e1e880: fc fc fc fc fc fc fc fc 00 02 fc fc fa fb fc fc
+[   32.913502] >ffff888107e1e900: fa fb fc fc 00 00 fc fc fc fc fc fc 00 06 fc fc
+[   32.913699]                                      ^
+[   32.913906]  ffff888107e1e980: 00 00 fc fc fc fc fc fc 00 00 fc fc 00 07 fc fc
+[   32.914118]  ffff888107e1ea00: fc fc fc fc fc fc fc fc 00 00 fc fc 00 07 fc fc
+[   32.914377] ==================================================================
+[   32.915030] Disabling lock debugging due to kernel taint
+[   32.915502] Malformed CHAP_R: invalid BASE64
+[   32.916279] Security negotiation failed.
+[   32.919940] iSCSI Login negotiation failed.
+[K-CHAP] got 48 bytes back
+23 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 01 00 00 00 00 00 00 00 00 00 00 
++ EXIT=0
++ echo '[init] poc exit=0'
+[init] poc exit=0
++ sleep 3
++ echo '===== DMESG TAIL (last 250 lines) ====='
+===== DMESG TAIL (last 250 lines) =====
++ dmesg
++ tail -250
+[   21.788896] eql: Equalizer2002: Simon Janes (simon@ncm.com) and David S. Miller (davem@redhat.com)
